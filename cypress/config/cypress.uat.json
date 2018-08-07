@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://smart-heat-service-1388704515.eu-west-1.elb.amazonaws.com",
+  "env": {
+    "profile": "uat"
+  }
+}

@@ -23,3 +23,9 @@ jobs:
             - ~/.cache
       - run: $(npm bin)/cypress run --env ENVIRONMENT=uat
       ##--record --key <record_key>
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build

@@ -3,5 +3,14 @@
 # dependencies
 /node_modules
 
+# videos
+/cypress/videos
+
+# screenshots
+/cypress/screenshots
+
+# multiple results
+/multiple-results
+
 # IDE
 .idea/

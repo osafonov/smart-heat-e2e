@@ -21,8 +21,14 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run: $(npm bin)/cypress run --env ENVIRONMENT=uat
+      - run: $(npm bin)/cypress run --env ENVIRONMENT=uat --reporter mocha-multi-reporters --reporter-options configFile=cypress.json
       ##--record --key <record_key>
+          - store_test_results:
+            path: multiple-results
+          - store_artifacts:
+            path: cypress/videos
+          - store_artifacts:
+            path: cypress/screenshots
 
 workflows:
   version: 2

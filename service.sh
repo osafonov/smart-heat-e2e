@@ -11,6 +11,9 @@ run_cypress_interactive_locally() {
 }
 
 case $1 in
+    run_cypress_interactive_locally)
+        run_cypress_interactive_locally
+        ;;
     run_e2e_locally)
         run_e2e_locally
         ;;

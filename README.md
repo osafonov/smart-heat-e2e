@@ -21,6 +21,10 @@ After `npm` installation please run:
 ```
 ./install_prerequisites.sh
  ```
+ In case if file is not executable run:
+ ```
+ chmod +x install_prerequisites.sh
+ ```
    
 
 

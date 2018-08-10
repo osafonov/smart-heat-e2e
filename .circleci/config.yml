@@ -23,9 +23,11 @@ jobs:
             - ~/.cache
       - run:
         name: Run tests
-        command: $(npm bin)/cypress run --env ENVIRONMENT=uat --reporter mocha-multi-reporters --reporter-options configFile=cypress.json
+        command: |
+          $(npm bin)/cypress run --env ENVIRONMENT=uat --reporter mocha-multi-reporters --reporter-options configFile=cypress.json
       - store_test_results:
           path: multiple-results
+          destination: scan-test-results
       - store_artifacts:
           path: cypress/screenshots
 

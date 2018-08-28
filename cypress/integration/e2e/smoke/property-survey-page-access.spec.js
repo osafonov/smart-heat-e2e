@@ -1,7 +1,4 @@
-/// <reference types="Cypress" />
-
 context('Check user can access the property-survey page and page is loaded properly', () => {
-    //beforeEach(() => {
 
     it('Property Survey Page: property form should have appropriate header', () => {
         cy.visit('/property-survey')
@@ -16,7 +13,6 @@ context('Check user can access the property-survey page and page is loaded prope
     })
 
     it('Property Survey Page: property form  should contain elements: for postcode check', () => {
-        //cy.get('form').within(() => {
         cy.get('div.form-cols label span').should('contain', 'Postcode')
         cy.get('input[name=\'postcode\']').should('have.attr', 'placeholder', 'Find Address')
         cy.get('button:button').should('contain', 'Find Address').and('be.enabled')
@@ -55,7 +51,6 @@ context('Check user can access the property-survey page and page is loaded prope
         cy.get('#numberOfRooms').select('8').should('contain', '8')
         cy.get('#numberOfRooms').select('9').should('contain', '9')
         cy.get('#numberOfRooms').select('10').should('contain', '10')
-
     })
 
     it('\'Select Property\' dropdown should contain selectable options', () => {

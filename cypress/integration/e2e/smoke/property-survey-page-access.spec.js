@@ -14,12 +14,12 @@ context('Check user can access the property-survey page and page is loaded prope
 
     it('Property Survey Page: property form  should contain elements: for postcode check', () => {
         cy.get('div.form-cols label span').should('contain', 'Postcode')
-        cy.get('input[name=\'postcode\']').should('have.attr', 'placeholder', 'Find Address')
+        cy.get('input[name=\'postCode\']').should('have.attr', 'placeholder', 'Find Address')
         cy.get('button:button').should('contain', 'Find Address').and('be.enabled')
     })
 
     it('Property Survey Page: property form  should contain elements: for property details', () => {
-        cy.get('input[name=\'postcode\']').type('B11 1AA')
+        cy.get('input[name=\'postCode\']').type('B11 1AA')
         cy.get('.input-group-btn > .btn > span').click()
 
         cy.get('#labelCurrentHeatingSystem > :nth-child(1)').should('contain', "Current Primary Heating System")

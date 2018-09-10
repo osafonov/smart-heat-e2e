@@ -3,7 +3,7 @@ context('Check user can submit Initial Quote: happy flow', () => {
     it('Check  postcode validated and is eligible ', () => {
         cy.visit('/property-survey')
         //TODO: mock address service
-        cy.get('input[name=\'postcode\']').type('B11 1AA')
+        cy.get('input[name=\'postCode\']').type('B11 1AA')
         cy.get('.input-group-btn > .btn > span').click()
         cy.get('.alert').should('have.class', "alert alert-success error alert-notification-font-size")
             .and('contain', "Great news! Dimplex Quantum heating is available in your area")

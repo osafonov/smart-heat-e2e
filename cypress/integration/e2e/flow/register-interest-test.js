@@ -2,7 +2,7 @@ context('Check user can register interest when non-eligible postcode is submitte
 
     it('Check validation is shown if non-eligible code submitted', () => {
         cy.visit('/property-survey')
-        cy.get('input[name=\'postcode\']').type('B11 1AE')
+        cy.get('input[name=\'postCode\']').type('B11 1AE')
         cy.get('.input-group-btn > .btn > span').click()
         cy.get('#errorPostcodeNotSupported').should('have.class', "alert alert-warning error alert-notification-font-size")
             .and('contain', "We're having trouble finding this postcode. Double check it's entered correctly, " +

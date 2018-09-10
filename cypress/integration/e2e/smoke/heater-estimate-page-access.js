@@ -2,7 +2,7 @@ context('Check user can access the boiler-survey page and page load properly', (
 
     it('Property details submitted', () => {
         cy.visit('/property-survey')
-        cy.get('input[name=\'postcode\']').type('B11 1AA')
+        cy.get('input[name=\'postCode\']').type('B11 1AA')
         cy.get('.input-group-btn > .btn > span').click()
         cy.get('#currentHeatingSystem').select('electric-off-peak')
         cy.get('#numberOfRooms').select('2')

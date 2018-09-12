@@ -9,27 +9,30 @@ context('Check user can access the property-survey page and page is loaded prope
     })
 
     it('Property Survey Page: property form  should have appropriate title', () => {
-        cy.get('h2 span').should('contain', 'Your property')
+        cy.get('#propertyPageTitle > span').should('contain', 'Let\'s get a quote')
     })
 
-    it('Property Survey Page: property form  should contain elements: for postcode check', () => {
-        cy.get('div.form-cols label span').should('contain', 'Postcode')
-        cy.get('input[name=\'postCode\']').should('have.attr', 'placeholder', 'Find Address')
-        cy.get('button:button').should('contain', 'Find Address').and('be.enabled')
+    it('Property Survey Page: property form  should contain elements', () => {
+        cy.get('#labelPostcode > :nth-child(1)').should('contain', '1. Select your address')
+        cy.get('.help-block > span').should('contain','We currently only supply specific regions within the U.K.')
+        cy.get('#inputPostcode').should('have.attr', 'placeholder', 'Find Address')
+        cy.get('#buttonFindAddress').should('contain', 'Find').and('be.enabled')
     })
 
-    it('Property Survey Page: property form  should contain elements: for property details', () => {
+    it('Property Survey Page: property form  should contain elements: dropdowns', () => {
         cy.get('input[name=\'postCode\']').type('B11 1AA')
         cy.get('.input-group-btn > .btn > span').click()
 
-        cy.get('#labelCurrentHeatingSystem > :nth-child(1)').should('contain', "Current Primary Heating System")
-        cy.get('#currentHeatingSystem').should('have.class', "form-control")
+        cy.get('#labelHomeType').should('contain', '2. Select your property type')
+        cy.get('#homeType').should('have.class', "form-control")
 
-        cy.get('#labelNumberOfRooms > :nth-child(1)').should('contain', 'Number of bedrooms')
+        cy.get('#labelNumberOfRooms').should('contain', '3. How many bedrooms?')
         cy.get('#numberOfRooms').should('have.class', "form-control")
 
-        cy.get('#labelHomeType > :nth-child(1)').should('contain', 'Select Property')
-        cy.get('#homeType').should('have.class', "form-control")
+        cy.get('#labelCurrentHeatingSystem').should('contain', "4. How do you currently heat your home?")
+        cy.get('#currentHeatingSystem').should('have.class', "form-control")
+
+
     })
 
     it('\'Current Primary Heating System\' dropdown should contain selectable options', () => {
@@ -62,7 +65,7 @@ context('Check user can access the property-survey page and page is loaded prope
     })
 
     it('\'Your property\' page should contain \'Your Quote\' button and be enabled', () => {
-        cy.get('#buttonPropertyForm').should('contain', 'Your quote').and('be.enabled')
+        cy.get('#buttonPropertyForm').should('contain', 'Next').and('be.enabled')
     })
 })
 

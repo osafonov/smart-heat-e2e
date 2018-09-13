@@ -1,5 +1,6 @@
 {
-  "baseUrl": "http://smart-heat-service-1388704515.eu-west-1.elb.amazonaws.com",
+  "baseUrl": "https://uat.quantum.ovoenergy.com",
+  "chromeWebSecurity": false,
   "env": {
     "profile": "uat"
   }

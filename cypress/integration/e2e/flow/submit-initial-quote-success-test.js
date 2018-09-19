@@ -9,8 +9,7 @@ context('Check user can submit Initial Quote: happy flow', () => {
         cy.get('#inputPostcode').type('B11 1AA')
 
         cy.get('.input-group-btn > .btn > span').click()
-        cy.get('.alert').should('have.class', "alert alert-success error alert-notification-font-size")
-            .and('contain', "Great news! Dimplex Quantum heating is available in your area")
+        
     })
 
     it('Check property form is shown and property details submitted ', () => {
@@ -20,7 +19,7 @@ context('Check user can submit Initial Quote: happy flow', () => {
         cy.get('#buttonPropertyForm').click()
     })
 
-    it(' Check  \'Your Estimate\' page loaded all check-boxes checked by default', () => {
+    it(' Check  \'Your Estimate\' page loaded ', () => {
         cy.url().should('contain', '/boiler-survey')
         cy.get(':nth-child(2) > :nth-child(4) > .checkbox').get('[type="checkbox"]').check().should('be.checked')
     })

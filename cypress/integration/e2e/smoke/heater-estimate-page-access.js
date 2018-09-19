@@ -12,8 +12,8 @@ context('Check user can access the boiler-survey page and page load properly', (
 
     it('Your estimate page loaded and  should contain logo and title', () => {
         cy.url().should('contain', '/boiler-survey')
-        cy.get('#headerTitle').should('contain', 'Smart Heaters')
-        cy.get('#headerLogo').should('have.attr', 'src', '/static/media/logo.57d6c87d.svg')
+        cy.get('.stripe').should('have.css', 'height','15px')
+        cy.get('#headerLogo').should('have.attr', 'src', '/static/media/logo.3f226471.svg')
     })
 
     it('Your estimate page should contain page title and bulleted info list  ', () => {
@@ -50,7 +50,7 @@ context('Check user can access the boiler-survey page and page load properly', (
         cy.get('#totalPrice').should('contain', "Total price (inc. VAT) £")
     })
 
-    it(' Your Estimate page should contain buttons ', () => {
+    it(' Your Estimate page should contain Back&Arrange a free survey buttons ', () => {
         cy.get('#backButtonBoilersPage > .btn').should('contain', 'Back').and('be.enabled')
         cy.get('#buttonArrangeSurvey').should('contain', 'Arrange a free survey').and('be.enabled')
     })

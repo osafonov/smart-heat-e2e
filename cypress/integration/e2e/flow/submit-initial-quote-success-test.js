@@ -9,7 +9,7 @@ context('Check user can submit Initial Quote: happy flow', () => {
         cy.get('#inputPostcode').type('B11 1AA')
 
         cy.get('.input-group-btn > .btn > span').click()
-        
+
     })
 
     it('Check property form is shown and property details submitted ', () => {
@@ -34,7 +34,7 @@ context('Check user can submit Initial Quote: happy flow', () => {
     })
 
     it(' Check on \'Your Estimate\' page extra rooms can be added from \'Add a room\' option', () => {
-        //TODO: use inxedx instead of product ref
+        //TODO: use index instead of product ref
         cy.get('#additionalHeater').select('46178')
         cy.get('#additionalHeater').select('46161')
         cy.get('#additionalHeater').select('46154')
